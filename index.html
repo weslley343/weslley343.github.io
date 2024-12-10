@@ -1,24 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Water Landscape</title>
-    <link rel="stylesheet" href="style/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Responsivo</title>
+  <link rel="stylesheet" href="./style/menu.css">
 </head>
-
 <body>
-    <header class="header">winter wind_</header>
-    <div class="menu">
-        <ul>
-            <img class="logo" src="./assets/logo.png"/>
-            <li><a href="#">Personal Posts</a></li>
-            <li><a href="#">EFI Posts</a></li>
-            <li><a href="#">Galery</a></li>
-            <li><a href="#">About-me</a></li>
-            <li><a href="#">Socials</a></li>
-
-        </ul>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#">W343</a>
     </div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Injeção eletrônica</a></li>
+      <li><a href="#">Devposts</a></li>
+      <li><a href="#">Personal Posts</a></li>
+      <li><a href="#">Galeria</a></li>
+      <li><a href="#">Sobre mim</a></li>
+      <li><a href="#" class="close-menu" id="close-menu">&times;</a></li> <!-- Botão de fechar -->
+    </ul>
+  </nav>
+  <script src="./scripts/menu.js"></script>
 </body>
 </html>
