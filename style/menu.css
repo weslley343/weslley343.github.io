@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Playfair+Display:wght@900&family=Playwrite+HR+Lijeva:wght@100..400&display=swap');
+
 body {
   margin: 0;
   height: 100vh;
@@ -7,7 +8,7 @@ body {
   background-image: url('https://wallpapercave.com/wp/wp12479471.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; 
+  background-position: center;
 }
 
 a {
@@ -52,7 +53,7 @@ a {
 }
 
 .nav-links a:hover {
-  color: #ffffff;
+  background-color: #555;
 }
 
 /* Menu de hambúrguer (visível apenas em telas pequenas) */
@@ -68,7 +69,8 @@ a {
   height: 3px;
   background-color: white;
 }
-.close-menu{
+
+.close-menu {
   visibility: hidden;
 }
 
@@ -85,7 +87,8 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000000;;
+    background-color: #000000;
+    ;
     display: none;
     flex-direction: column;
     justify-content: center;
