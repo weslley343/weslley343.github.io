@@ -2,11 +2,10 @@
 
 body {
   margin: 0;
-  padding: 0;
   height: 100vh;
   font-family: "Funnel Display", sans-serif;
-  background-color: #000000;
-  background-image: url('https://wallpapercave.com/wp/wp12479471.jpg');
+  background-color: #131313;
+  color: aliceblue;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -130,25 +129,37 @@ a {
   }
 }
 
+.card_group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.question{
+    font-size: medium;
+    font-weight:bolder;
+}
+
 .main_card{
-  width: 100%;
-  height: 90%;
-  color: aliceblue;
-  background-color: #00000060;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  flex-direction: column;
+    padding: 3%;
+    width: 70%;
+    margin: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.699);
 }
 
-.main_card img{
-  width: 10%;
+.main_card img {
+    width: 20%;
 }
 
+.main_card p{
+    margin-left: 5%;
+    margin-right: 5%;
+}
 @media (max-width: 768px){
-  .main_card img{
-    width: 30%;
-  }
-  
+    .main_card img{
+        width: 70%;
+    }
 }
