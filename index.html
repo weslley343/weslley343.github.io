@@ -1,46 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Responsivo</title>
-  <link rel="stylesheet" href="./style/menu.css">
+  <title>Weslley 343</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="logo">
-      <a href="#">W343</a>
+  <header>
+    <h2>W343</h2>
+  </header>
+  <section>
+    <div class="menu" id="sl0">
+      <div class="selected-field" id="selected-field">
+        teste
+      </div>
+      <a href="youtube.com" id="url-selected-field">
+        <img src="./assets/teste.png" alt="section view" id="image-selected-field">
+      </a>
     </div>
-    <div class="menu-toggle" id="mobile-menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+  </section>
+  <footer>
+    <div class="selection-interface">
+      <button onclick="setSelection('left')"> &lt; </button>
+      <button onclick="setSelection('right')"> &gt; </button>
     </div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a
-          href="https://circular-handbell-300.notion.site/Inje-o-Eletr-nica-159f7e20adf88048a33ce82895975144?pvs=73">EFI
-          Posts</a></li>
-      <li><a
-          href="https://circular-handbell-300.notion.site/Developer-Posts-159f7e20adf880609bc9ef64bc60bb41?pvs=4">Developer
-          Posts</a></li>
-      <li><a href="./pages/personal/personal.html">Personal
-          Posts</a></li>
-      <li><a href="https://circular-handbell-300.notion.site/Media-159f7e20adf8806897e2da5a97a09bcd?pvs=4">Media</a>
-      </li>
-      <li><a href="./pages/aboutme/aboutme.html">About-me</a></li>
-      <li><a href="#" class="close-menu" id="close-menu">&times;</a></li> <!-- Botão de fechar -->
-    </ul>
-  </nav>
-  <div class="main_card">
-    <img src="./assets/logo.png">
-    <h1>Nessa parte eu deixo alguma novidade no site</h1>
-    <p>(Por enquanto a novidade do site é que ele existe)
-    </p>
-  </div>
-  <script src="./scripts/menu.js"></script>
+  </footer>
+  <script src="script.js"></script>
 </body>
 
 </html>
