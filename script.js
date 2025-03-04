@@ -3,43 +3,43 @@ let currentIndex = 0; // Índice atual do item exibido
 const links = [
     {
         identifier: "sl0",
-        img: "./assets/teste.png",
+        img: "./assets/logo.png",
         url: "#",
-        title: "Limiar between water and wind"
-    },
-    {
-        identifier: "sl1",
-        img: "./assets/teste2.png",
-        url: "https://circular-handbell-300.notion.site/EFI-Posts-159f7e20adf88048a33ce82895975144",
-        title: "Efi Posts"
+        title: "Bem vindo"
     },
     {
         identifier: "sl2",
-        img: "./assets/teste3.png",
+        img: "./assets/menu/techposts.png",
         url: "http://pinterest.com",
         title: "Tech Posts"
     },
     {
         identifier: "sl3",
-        img: "./assets/teste3.png",
+        img: "./assets/menu/personalposts.png",
         url: "http://pinterest.com",
         title: "Personal Posts"
     },
     {
+        identifier: "sl1",
+        img: "./assets/menu/efiposts.png",
+        url: "https://circular-handbell-300.notion.site/EFI-Posts-159f7e20adf88048a33ce82895975144",
+        title: "Efi Posts"
+    },
+    {
         identifier: "sl4",
-        img: "./assets/teste3.png",
+        img: "./assets/menu/media.png",
         url: "https://circular-handbell-300.notion.site/Media-159f7e20adf8806897e2da5a97a09bcd?pvs=4",
         title: "Media"
     },
     {
         identifier: "sl5",
-        img: "./assets/teste3.png",
+        img: "./assets/menu/portfolio.png",
         url: "http://pinterest.com",
         title: "Portfolio"
     },
     {
         identifier: "sl6",
-        img: "./assets/teste3.png",
+        img: "./assets/menu/socials.png",
         url: "http://pinterest.com",
         title: "Socials"
     }
