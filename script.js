@@ -22,7 +22,7 @@ const links = [
     {
         identifier: "sl1",
         img: "./assets/menu/efiposts.png",
-        url: "https://circular-handbell-300.notion.site/EFI-Posts-159f7e20adf88048a33ce82895975144",
+        url: "/pages/efiposts/efiposts.html",
         title: "Efi Posts"
     },
     {
