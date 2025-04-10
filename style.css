@@ -1,94 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Nova+Cut&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Slab:wght@100..900&display=swap');
 body {
-  background-color: rgb(255, 255, 255);
-  margin: 0;
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  background-image: url('./assets/background.png');
-  background-size: cover;
-  /* Faz a imagem cobrir todo o fundo */
-  background-position: center;
-  /* Centraliza a imagem */
-  background-repeat: no-repeat;/
-}
-
-header {
-  font-family: "Bebas Neue", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
   color: white;
-  width: 100%;
-  text-align: center;
-  font-size: 3em;
-  height: 10%;
+  background-color: rgb(0, 0, 0);
+  background-image: url('assets/background.JPG');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  /* margin: 0; */
+  /* ocupa a altura inteira da tela */
+
 }
 
 section {
+  padding: 2em;
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 80%;
-}
-
-footer {
-  background-color: aqua;
-  height: 10%;
-}
-
-.menu {
-  display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
-
-}
-
-.menu a {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
+  height: 80vh;
 }
 
-.selected-field {
-  /* color: white; */
-  font-family: "Nova Cut", system-ui;
+section h1 {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   font-size: 2em;
-  margin: 13px;
+  margin-bottom: 20px;
+}
+section p {
+  font-family: "IBM Plex Mono", monospace;
+  font-style: italic;
 }
 
-.menu a img {
-  width: 90%;
-  border: solid 3px black;
-  background-color: rgba(0, 0, 0, 0.705);
+section strong {
+  font-family: "Delius Swash Caps", cursive;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.7em;
+  margin-bottom: 20px;
+  text-decoration: underline;
 }
 
+.advice {
+  font-size: 0.7em;
+}
 
-.selection-interface {
+.advice a{
+  color: white;
+}
+button{
+  margin: 1em;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+  border-radius: 5px;
+  font-size: 1.5em;
+  padding: 10px 20px;
+  border: 3px solid white;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.7s ease;
+}
+
+footer ul{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(0, 0, 0);
-  width: 100%;
-  height: 100%;
+  flex-direction: row;
+  height: 1vh;
+  background-color: rgba(153, 205, 50, 0);
 }
 
-.selection-interface button {
-  font-size: 3em;
-  font-family: "Bebas Neue", sans-serif;
-  width: 50%;
-  height: 90%;
+footer ul li{
+  list-style: none;
+  margin: 0 1em;
+}
+
+footer img{
+  width: 2em;
   color: white;
-  background-color: rgb(0, 0, 0);
-  border: none;
 }
-
-/* .selection-interface button:hover {
-  background-color: rgba(43, 43, 43, 0.541);
-} */
