@@ -7,8 +7,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
-  /* margin: 0; */
-  /* ocupa a altura inteira da tela */
 
 }
 
@@ -38,7 +36,7 @@ section strong {
   font-family: "Delius Swash Caps", cursive;
   font-weight: 700;
   font-style: normal;
-  font-size: 2.7em;
+  font-size: 2.3em;
   margin-bottom: 20px;
   text-decoration: underline;
 }
@@ -59,7 +57,7 @@ button{
   font-size: 1.5em;
   padding: 10px 20px;
   border: 3px solid white;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgb(135, 148, 189);
   color: white;
   cursor: pointer;
 }
