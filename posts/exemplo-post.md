@@ -1,7 +1,7 @@
 ---
 title: Meu primeiro post
 date: 2026-03-06
-description: Teste inicial do blog
+description: Post de teste
 ---
 
-Este é o primeiro post do meu blog.
+Este é o conteúdo do meu primeiro post.
