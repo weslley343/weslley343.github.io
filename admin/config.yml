@@ -5,18 +5,17 @@ backend:
 
 site_url: https://weslley343.github.io
 
-media_folder: "assets/images/uploads"
-public_folder: "/assets/images/uploads"
+media_folder: "assets/images/"
+public_folder: "/assets/images/"
 
 collections:
-  - name: "posts"
-    label: "Posts"
-    folder: "posts"
+  - name: "blog"
+    label: "Postagens"
+    folder: "_posts" # Pasta onde o Markdown será criado
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-
     fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Data", name: "date", widget: "datetime" }
-      - { label: "Descrição", name: "description", widget: "text" }
-      - { label: "Conteúdo", name: "body", widget: "markdown" }
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Data de Publicação", name: "date", widget: "datetime"}
+      - {label: "Resumo", name: "description", widget: "text"}
+      - {label: "Corpo do Post", name: "body", widget: "markdown"}
