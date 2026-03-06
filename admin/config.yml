@@ -3,6 +3,9 @@ backend:
   repo: weslley343/weslley343.github.io
   branch: main
 
+site_url: https://weslley343.github.io
+display_url: https://weslley343.github.io
+
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
