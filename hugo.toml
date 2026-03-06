@@ -1,0 +1,8 @@
+baseURL = 'https://seu-usuario.github.io/seu-repo/'
+languageCode = 'pt-br'
+title = 'Meu Portfólio & Blog'
+theme = 'PaperMod'
+
+[params]
+    defaultTheme = "auto"
+    showCodeCopyButtons = true
