@@ -1,6 +1,6 @@
 const repo = "weslley343/weslley343.github.io";
 
-const url = `https://api.github.com/repos/${repo}/issues?labels=blog`;
+const url = `https://api.github.com/repos/${repo}/issues?labels=post`;
 
 async function carregarPosts() {
 
