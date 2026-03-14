@@ -1,67 +1,77 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Inter', sans-serif;
-}
-
 /* NAVBAR */
 
 .navbar{
+    color: white;
+    position:fixed;
+    top:0;
+    width:100%;
 
-position:fixed;
-top:0;
-left:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-width:100%;
+    padding:15px 40px;
 
-background:white;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
 
-border-bottom:1px solid #eee;
-
-z-index:1000;
-
+    z-index:1000;
 }
 
-.nav-container{
+/* logo */
 
-max-width:1100px;
-margin:auto;
-
-padding:15px 20px;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
+.nav-logo{
+    font-size:20px;
+    font-weight:bold;
+    transition: transform 0.3s ease;
 }
 
-.logo{
-font-weight:600;
-font-size:20px;
+.nav-logo:hover {
+    transform: scale(1.05);
 }
+
+/* links */
 
 .nav-links{
-display:flex;
-gap:20px;
+    display:flex;
+    gap:30px;
+    list-style:none;
 }
 
-.nav-btn{
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
 
-text-decoration:none;
-color:#555;
-
-font-weight:500;
-
-padding:8px 10px;
-
-transition:0.2s;
-
+    font-size:18px;
+    padding:10px 15px;
+    border-radius:5px;
+    transition: background 0.2s ease;
 }
 
-.nav-btn:hover{
-color:#000;
+.nav-links a:hover{
+    background:rgba(255,255,255,0.2);
+}
+
+/* botão de download na navbar */
+.nav-links a.btn-download {
+    background: white;
+    color: black;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a.btn-download:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 25px; /* Aumenta a altura e as margens da navbar no celular */
+    }
 }

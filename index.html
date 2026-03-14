@@ -2,56 +2,219 @@
 <html lang="pt-BR">
 
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Weslley343</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/home/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snap Scroll Example</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
 </head>
 
 <body>
+  <nav class="navbar">
 
-    <nav class="navbar">
-
-        <div class="nav-container">
-
-            <div class="logo">
-                Weslley.343
-            </div>
-
-            <div class="nav-links">
-                <a href="#curriculo" class="nav-btn">Currículo <i class="fa-solid fa-download"></i></a>
-                <a href="#blog" class="nav-btn">Blog <i class="fa-solid fa-angles-right"></i></a>
-            </div>
-
-        </div>
-
-    </nav>
-
-
-    <div class="scroll-container">
-
-        <section id="curriculo" class="section s1">
-            <h1>Currículo</h1>
-        </section>
-
-        <section id="blog" class="section s2">
-            <h1>Blog</h1>
-        </section>
-        <section id="teste" class="section s3">
-            <h1>Blog</h1>
-        </section>
-
+    <div class="nav-logo">
+      Weslley343
     </div>
 
+    <ul class="nav-links">
+      <li>
+        <a href="#" class="btn-download" download>
+          Currículo
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+  <div class="container">
+
+    <section class="section s1">
+      <div class="logo-container">
+        <img src="assets/images/logo.png" alt="Logo de Weslley">
+      </div>
+      <p class="name">Weslley David</p>
+      <p class="role">
+        FullStack
+        <a href="https://nextjs.org" class="tech-link" target="_blank" rel="noopener noreferrer">
+          Next
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+        &
+        <a href="https://www.django-rest-framework.org" class="tech-link" target="_blank" rel="noopener noreferrer">
+          DjangoRest
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      </p>
+      <a href="blog.html" class="btn-blog">
+        Blog
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </section>
+
+    <section class="section s2">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="assets/images/me.jpg" alt="Foto de Weslley">
+        </div>
+        <div class="about-text">
+          <h2>Olá Mundo,</h2>
+          <p>Me chamo Weslley David. Sou técnico em informática e estudante de Análise e Desenvolvimento de Sistemas.
+            Tenho interesse em entender a relação entre pessoas e máquinas, e em como a tecnologia pode organizar
+            informações e apoiar decisões no mundo real.</p>
+          <p>Gosto especialmente de modelagem de dados e da construção de sistemas que transformem dados em ferramentas úteis. Atualmente desenvolvo aplicações utilizando Django e Next.js.</p>
+          <p>Este espaço reúne alguns dos meus projetos, experimentos e ideias ao longo do meu processo de aprendizado
+            em tecnologia.</p>
+          <div class="contact-links">
+            <a href="https://github.com/weslley343" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              GitHub
+            </a>
+            <a href="mailto:contato@weslley.dev">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Email
+            </a>
+            <a href="tel:+5511999999999">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              Celular
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section s3" id="secao3">
+      <div class="projects-container">
+        <h2>Meus Projetos</h2>
+        <div class="projects-grid">
+          <!-- Card de Projeto 1 -->
+          <div class="project-card">
+            <div class="project-card-content">
+              <h3>Nome do Projeto 1</h3>
+              <p>Uma breve descrição sobre o que este projeto faz, seus objetivos e os desafios enfrentados durante o
+                desenvolvimento.</p>
+              <div class="project-tags">
+                <span>Next.js</span>
+                <span>TypeScript</span>
+                <span>Styled-Components</span>
+              </div>
+              <div class="project-links">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                  GitHub
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Card de Projeto 2 -->
+          <div class="project-card">
+            <div class="project-card-content">
+              <h3>Nome do Projeto 2</h3>
+              <p>Uma breve descrição sobre o que este projeto faz, seus objetivos e os desafios enfrentados durante o
+                desenvolvimento.</p>
+              <div class="project-tags">
+                <span>Django</span>
+                <span>Python</span>
+                <span>PostgreSQL</span>
+              </div>
+              <div class="project-links">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+
+          </div>
+          <!-- Card de Projeto 2 -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section s4">
+      <p class="template-link">
+        Gostou do layout? Sinta-se à vontade para <a href="https://github.com/weslley343/weslley343.github.io"
+          target="_blank" rel="noopener noreferrer">copiar este template</a> e usá-lo em seu próprio portfólio.
+      </p>
+    </section>
+  </div>
+
 </body>
+
+<script>
+  // Script para adicionar a classe .is-visible quando a seção entra na tela
+  const sections = document.querySelectorAll('.section');
+
+  const observerOptions = {
+    root: document.querySelector('.container'), // Observar dentro do nosso container de scroll
+    rootMargin: '0px',
+    threshold: 0.4 // Acionar quando 40% da seção estiver visível
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      } else {
+        // Remove a classe para que a animação possa ocorrer novamente ao rolar de volta
+        entry.target.classList.remove('is-visible');
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => observer.observe(section));
+</script>
 
 </html>

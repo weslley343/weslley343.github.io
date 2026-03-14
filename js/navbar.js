@@ -1,13 +1,11 @@
-const button = document.getElementById("menuButton");
-const menu = document.getElementById("mobileMenu");
+const btn = document.querySelector(".mobile-menu-btn")
+const menu = document.querySelector(".mobile-menu")
+const closeBtn = document.querySelector(".close-btn")
 
-button.addEventListener("click", () => {
+btn.addEventListener("click", () => {
+    menu.classList.toggle("open")
+})
 
-if(menu.style.display === "flex"){
-menu.style.display = "none";
-}
-else{
-menu.style.display = "flex";
-}
-
-});
+closeBtn.addEventListener("click", () => {
+    menu.classList.remove("open")
+})
