@@ -19,7 +19,7 @@ new Date(issue.created_at).toLocaleDateString();
 
 const tags = issue.labels
 .filter(l => l.name !== "blog")
-.map(l => `<span class="badge bg-secondary">${l.name}</span>`)
+.map(l => `<span>${l.name}</span>`)
 .join(" ");
 
 document.getElementById("tags").innerHTML = tags;

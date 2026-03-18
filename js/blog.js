@@ -14,42 +14,24 @@ issues.forEach(issue => {
 
 const resumo = issue.body.substring(0, 200);
 
-const tags = issue.labels
-.filter(l => l.name !== "blog")
-.map(l => `<span class="badge bg-secondary tag-badge">${l.name}</span>`)
-.join("");
+const dataCriacao = new Date(issue.created_at);
 
-const html = `
-<div class="col-md-6">
+    const tags = issue.labels
+    //   .filter(label => label.name !== 'post') // Não exibir a tag 'post'
+      .map(label => `<span>${label.name}</span>`)
+      .join('');
 
-<div class="card h-100">
-
-<div class="card-body">
-
-<h5 class="card-title">${issue.title}</h5>
-
-<p class="text-muted">
-${new Date(issue.created_at).toLocaleDateString()}
-</p>
-
-<div class="mb-2">
-${tags}
-</div>
-
-<p class="card-text">
-${resumo}...
-</p>
-
-<a href="post.html?id=${issue.number}" class="btn btn-primary">
-Ler post
-</a>
-
-</div>
-
-</div>
-
-</div>
-`;
+    const html = `
+      <a href="post.html?id=${issue.number}" class="blog-card">
+        <div class="blog-card-content">
+            <h3>${issue.title}</h3>
+            <p>${dataCriacao.toLocaleDateString()}</p>
+            <div class="project-tags">
+                ${tags}
+            </div>
+        </div>
+      </a>
+    `;
 
 container.innerHTML += html;
 

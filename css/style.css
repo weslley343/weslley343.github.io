@@ -10,11 +10,15 @@ body {
     overflow: hidden;
 }
 
-.container {
+/* Renomeado para não conflitar com Bootstrap e frameworks */
+.page-container {
     /* ativa o scroll snap vertical no contêiner correto */
-    scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: 100vh;
+}
+
+.snap-scroll {
+    scroll-snap-type: y mandatory;
 }
 
 .section {
@@ -38,14 +42,15 @@ body {
 /* cores só para visualizar */
 
 .s1 {
-    background: url('../assets/images/background.jpg') center/cover no-repeat;
+    /* background: url('../assets/images/background.jpg') center/cover no-repeat; */
     flex-direction: column;
     text-align: center;
+    color: black;
 }
 
 .logo-container {
     width: 50vmin;
-    
+
     height: 50vmin;
     border-radius: 50%;
     margin-bottom: 20px;
@@ -87,14 +92,23 @@ body {
 }
 
 .tech-link:hover {
-    color: #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+.s1 .tech-link {
+    color: black;
+}
+
+.s1 .tech-link:hover {
+    color: #333;
+    border-bottom: 1px solid #333;
 }
 
 /* Botão de blog (visual igual ao de Download CV) */
 .btn-blog {
-    background: white;
-    color: black;
+    background: #000116;
+    color: white;
     font-weight: bold;
     font-size: 18px;
     text-decoration: none;
@@ -107,14 +121,23 @@ body {
 }
 
 .btn-blog:hover {
-    background: #e0e0e0;
+    background: #000116;
 }
 
-.s2 { background: #0d1418 center/cover no-repeat; }
-.s3 { background: #0d1418; }
+.s2 {
+    background-color: #000116;
+    /* background: url('../assets/images/background2.jpg') center/cover no-repeat; */
+}
+
+.s3 {
+    background-color: #000116;
+    /* background: url('../assets/images/background2.jpg') center/cover no-repeat; */
+}
+
 .s4 {
-    background: #0d1418;
-    min-height: auto; /* Faz esta seção se comportar como um rodapé */
+    background: #002338;
+    min-height: auto;
+    /* Faz esta seção se comportar como um rodapé */
     padding: 40px 25px;
 }
 
@@ -122,11 +145,12 @@ body {
 .about-container {
     margin: 1rem;
     background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
 
-    display: block; /* Removemos o flex para permitir que o texto envolva a imagem */
+    display: block;
+    /* Removemos o flex para permitir que o texto envolva a imagem */
     max-width: 1000px;
     padding: 50px;
 }
@@ -139,7 +163,8 @@ body {
 }
 
 .about-image {
-    float: left; /* Flutua a imagem à esquerda */
+    float: left;
+    /* Flutua a imagem à esquerda */
     margin-right: 40px;
     margin-bottom: 20px;
 }
@@ -169,7 +194,7 @@ body {
 }
 
 /* Adiciona espaço entre os parágrafos para melhor legibilidade */
-.about-text p + p {
+.about-text p+p {
     margin-top: 1.5em;
 }
 
@@ -214,8 +239,20 @@ body {
     gap: 30px;
 }
 
-.project-card {
-    background: rgba(255, 255, 255, 0.05);
+#posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    /* Garante que em monitores largos, a grade não se estique demais */
+    margin: 0 auto;
+    /* Centraliza a grade de posts */
+}
+
+.project-card,
+.blog-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     overflow: hidden;
@@ -224,24 +261,30 @@ body {
     display: flex;
 }
 
-.project-card:hover {
+.project-card:hover,
+.blog-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-.project-card-content {
+.project-card-content,
+.blog-card-content {
     padding: 25px;
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.project-card-content h3 {
+.project-card-content h3,
+.blog-card h3,
+.blog-card h5 {
     font-size: 1.5rem;
     margin-bottom: 15px;
+    color: white;
 }
 
-.project-card-content p {
+.project-card-content p,
+.blog-card p {
     font-size: 1rem;
     line-height: 1.5;
     color: #cccccc;
@@ -302,7 +345,7 @@ body {
     border-color: #1abc9c;
 }
 
-/* Responsividade para a primeira seção */
+/* Responsividade geral e seções */
 @media (max-width: 799px) {
     .logo-container {
         width: 80vmin;
@@ -324,7 +367,8 @@ body {
     }
 
     .about-image {
-        float: none; /* Remove a flutuação no celular */
+        float: none;
+        /* Remove a flutuação no celular */
         display: flex;
         justify-content: center;
         margin: 0 auto 30px auto;
@@ -357,8 +401,15 @@ body {
     }
 
     .projects-grid {
-        grid-template-columns: 1fr; /* Empilha os cards em telas menores */
+        grid-template-columns: 1fr;
+        /* Empilha os cards em telas menores */
     }
+
+    #posts {
+        display: block;
+        /* Transforma o grid em lista vertical */
+    }
+
 }
 
 /* --- Animações de Scroll --- */
@@ -377,30 +428,103 @@ body {
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.s1 .logo-container { transform: scale(0.9); }
-.s1 .name, .s1 .role, .s1 .btn-blog { transform: translateY(30px); }
-.about-image { transform: scale(0.9); }
-.about-text { transform: translateY(30px); }
-.projects-container h2 { transform: translateY(30px); }
-.project-card { transform: translateY(50px); }
-.template-link { transform: translateY(30px); }
+.s1 .logo-container {
+    transform: scale(0.9);
+}
+
+.s1 .name,
+.s1 .role,
+.s1 .btn-blog {
+    transform: translateY(30px);
+}
+
+.about-image {
+    transform: scale(0.9);
+}
+
+.about-text {
+    transform: translateY(30px);
+}
+
+.projects-container h2 {
+    transform: translateY(30px);
+}
+
+.project-card {
+    transform: translateY(50px);
+}
+
+.template-link {
+    transform: translateY(30px);
+}
 
 /* Ativa as animações quando a seção ganha a classe .is-visible */
-.s1.is-visible .logo-container { opacity: 1; transform: scale(1); transition-delay: 0.1s; }
-.s1.is-visible .name { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
-.s1.is-visible .role { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
-.s1.is-visible .btn-blog { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+.s1.is-visible .logo-container {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.1s;
+}
 
-.s2.is-visible .about-image { opacity: 1; transform: scale(1); transition-delay: 0.2s; }
-.s2.is-visible .about-text { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+.s1.is-visible .name {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
 
-.s3.is-visible .projects-container h2 { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+.s1.is-visible .role {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+.s1.is-visible .btn-blog {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+}
+
+.s2.is-visible .about-image {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.2s;
+}
+
+.s2.is-visible .about-text {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+.s3.is-visible .projects-container h2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
 
 /* Animação escalonada para os cards de projeto */
-.s3.is-visible .project-card { opacity: 1; transform: translateY(0); }
-.s3.is-visible .projects-grid .project-card:nth-child(1) { transition-delay: 0.3s; }
-.s3.is-visible .projects-grid .project-card:nth-child(2) { transition-delay: 0.4s; }
-.s3.is-visible .projects-grid .project-card:nth-child(3) { transition-delay: 0.5s; }
-.s3.is-visible .projects-grid .project-card:nth-child(4) { transition-delay: 0.6s; }
+.s3.is-visible .project-card {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-.s4.is-visible .template-link { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+.s3.is-visible .projects-grid .project-card:nth-child(1) {
+    transition-delay: 0.3s;
+}
+
+.s3.is-visible .projects-grid .project-card:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.s3.is-visible .projects-grid .project-card:nth-child(3) {
+    transition-delay: 0.5s;
+}
+
+.s3.is-visible .projects-grid .project-card:nth-child(4) {
+    transition-delay: 0.6s;
+}
+
+.s4.is-visible .template-link {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}

@@ -32,7 +32,7 @@
 
   </nav>
 
-  <div class="container">
+  <div class="page-container snap-scroll">
 
     <section class="section s1">
       <div class="logo-container">
@@ -40,7 +40,6 @@
       </div>
       <p class="name">Weslley David</p>
       <p class="role">
-        FullStack
         <a href="https://nextjs.org" class="tech-link" target="_blank" rel="noopener noreferrer">
           Next
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"
@@ -123,15 +122,14 @@
           <!-- Card de Projeto 1 -->
           <div class="project-card">
             <div class="project-card-content">
-              <h3>Nome do Projeto 1</h3>
-              <p>Uma breve descrição sobre o que este projeto faz, seus objetivos e os desafios enfrentados durante o
-                desenvolvimento.</p>
+              <h3>[Comming Soon]</h3>
+              <p>Coisas Boas vem chegando...</p>
               <div class="project-tags">
                 <span>Next.js</span>
                 <span>TypeScript</span>
                 <span>Styled-Components</span>
               </div>
-              <div class="project-links">
+              <!-- <div class="project-links">
                 <a href="#" target="_blank" rel="noopener noreferrer">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -150,21 +148,20 @@
                   </svg>
                   Live Demo
                 </a>
-              </div>
-            </div>
+              </div> -->
+            </div> 
           </div>
           <!-- Card de Projeto 2 -->
           <div class="project-card">
             <div class="project-card-content">
-              <h3>Nome do Projeto 2</h3>
-              <p>Uma breve descrição sobre o que este projeto faz, seus objetivos e os desafios enfrentados durante o
-                desenvolvimento.</p>
+              <h3>[Comming Soon]</h3>
+              <p>Coisas Boas vem chegando...</p>
               <div class="project-tags">
                 <span>Django</span>
                 <span>Python</span>
                 <span>PostgreSQL</span>
               </div>
-              <div class="project-links">
+              <!-- <div class="project-links">
                 <a href="#" target="_blank" rel="noopener noreferrer">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -174,7 +171,7 @@
                   </svg>
                   GitHub
                 </a>
-              </div>
+              </div> -->
             </div>
 
           </div>
@@ -198,7 +195,7 @@
   const sections = document.querySelectorAll('.section');
 
   const observerOptions = {
-    root: document.querySelector('.container'), // Observar dentro do nosso container de scroll
+    root: document.querySelector('.page-container'), // Observar dentro do nosso container de scroll
     rootMargin: '0px',
     threshold: 0.4 // Acionar quando 40% da seção estiver visível
   };
