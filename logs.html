@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logs // weslley343</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/common/global.css">
     <link rel="stylesheet" href="css/index/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -18,6 +21,7 @@
             max-width: 600px;
             margin: 0 auto;
         }
+
         .log-entry {
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
@@ -26,16 +30,21 @@
             font-family: var(--font-body);
             color: var(--text-primary);
         }
+
         .log-entry p {
             margin-bottom: var(--spacing-sm);
         }
+
         .log-entry p:last-child {
             margin-bottom: 0;
         }
-        .log-entry ul, .log-entry ol {
+
+        .log-entry ul,
+        .log-entry ol {
             margin-bottom: var(--spacing-sm);
             padding-left: var(--spacing-lg);
         }
+
         .log-entry code {
             font-family: var(--font-mono);
             background-color: var(--background-color);
@@ -43,6 +52,7 @@
             border-radius: 2px;
             font-size: 0.9em;
         }
+
         .log-meta {
             font-family: var(--font-mono);
             font-size: 0.75rem;
@@ -55,17 +65,18 @@
         }
     </style>
 </head>
+
 <body>
     <header class="navbar">
         <div class="navbar-container">
             <div class="navbar-brand">
-                W343
+                WD343
             </div>
             <nav class="navbar-links">
                 <a href="index.html">/INDEX</a>
                 <a href="articles.html">/ARTICLES</a>
                 <a href="logs.html" class="active">/LOGS</a>
-                <a href="galley.html">/GALERRY</a>
+
                 <a href="me.html">/ME</a>
             </nav>
         </div>
@@ -78,7 +89,8 @@
                 <span class="mono-label">SOURCE</span> OBSIDIAN_VAULT
             </div>
             <h1 class="page-title" style="font-size: 2.5rem;">
-                <span style="color: #7dd3fc;">SYSTEM</span><span style="color: var(--info-blue); opacity: 0.8;">_</span><span style="color: #0284c7;">LOGS</span>
+                <span style="color: #7dd3fc;">SYSTEM</span><span
+                    style="color: var(--info-blue); opacity: 0.8;">_</span><span style="color: #0284c7;">LOGS</span>
             </h1>
             <p class="subtitle">Real-time status updates, micro-thoughts, and quick development notes.</p>
         </section>
@@ -87,7 +99,8 @@
 
         <section class="grid-section" style="max-width: 600px; margin: 0 auto;">
             <div id="log-feed" class="log-feed">
-                <p style="color: var(--text-secondary); font-family: var(--font-mono); text-align: center;">[ SYSTEM_LOG ] Fetching terminal logs...</p>
+                <p style="color: var(--text-secondary); font-family: var(--font-mono); text-align: center;">[ SYSTEM_LOG
+                    ] Fetching terminal logs...</p>
             </div>
         </section>
     </main>
@@ -103,4 +116,5 @@
 
     <script src="js/blog.js"></script>
 </body>
+
 </html>
