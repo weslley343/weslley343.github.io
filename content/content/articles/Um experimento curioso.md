@@ -1,7 +1,7 @@
 ---
 id: 1
 title: "# Um experimento curioso"
-data: 2026-07-11T14:35:18-03:00
+data: 2026-07-11T14:37:18-03:00
 tags:
   - #article
   - #ia_com_revisao_humana
