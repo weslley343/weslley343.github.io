@@ -37,11 +37,21 @@ def parse_markdown(filepath, filename):
     
     metadata['tags'] = [t.strip().replace('#', '') for t in tags_str.split() if t.startswith('#')]
             
-    # Strict: Extract title from first H1
-    h1_match = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
-    if not h1_match:
-        raise ValueError(f"Missing H1 title ('# Title') in {filename}")
-    metadata['title'] = h1_match.group(1).strip()
+    # Extract title from frontmatter, fallback to H1
+    title_match = re.search(r'^title:\s*(.+)$', content, re.MULTILINE)
+    if title_match:
+        title_raw = title_match.group(1).strip()
+        # Remove surrounding quotes and leading #
+        title_raw = title_raw.strip('"\'')
+        if title_raw.startswith('# '):
+            title_raw = title_raw[2:]
+        metadata['title'] = title_raw.strip()
+    else:
+        # Strict: Extract title from first H1
+        h1_match = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
+        if not h1_match:
+            raise ValueError(f"Missing H1 title ('# Title') in {filename}")
+        metadata['title'] = h1_match.group(1).strip()
             
     return metadata
 

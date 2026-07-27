@@ -90,7 +90,7 @@ async function renderSingleArticle() {
     
     try {
         // Fetch article metadata
-        const responseList = await fetch(ARTICLES_JSON_URL);
+        const responseList = await fetch(`${ARTICLES_JSON_URL}?t=${new Date().getTime()}`);
         const articles = await responseList.json();
         const articleMeta = articles.find(a => a.id === parseInt(articleId));
         
@@ -117,7 +117,7 @@ async function renderSingleArticle() {
 
         // Fetch markdown content
         const markdownUrl = `${ARTICLES_DIR}${encodeURIComponent(articleMeta.filename)}`;
-        const response = await fetch(markdownUrl);
+        const response = await fetch(`${markdownUrl}?t=${new Date().getTime()}`);
         if (!response.ok) throw new Error('Failed to load markdown file');
         
         const markdownContent = await response.text();
