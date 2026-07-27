@@ -7,7 +7,6 @@ tags:
   - #ia_com_revisao_humana
   - #teste
 ---
-# Um experimento curioso
 
 # Dois posts no mesmo dia?
 
