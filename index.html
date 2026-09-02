@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>weslley343</title>
+    <title>Início // weslley343</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,51 +12,155 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/common/global.css">
     <link rel="stylesheet" href="css/index/styles.css">
+    <style>
+        .welcome-hero {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: var(--spacing-lg) 0;
+        }
+
+        .construction-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(245, 158, 11, 0.1);
+            color: var(--warning-orange);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .status-dot-warning {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--warning-orange);
+            box-shadow: 0 0 8px rgba(245, 158, 11, 0.8);
+            display: inline-block;
+        }
+
+        .suggestion-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            max-width: 760px;
+            margin: var(--spacing-xl) auto 0;
+        }
+
+        @media (min-width: 768px) {
+            .suggestion-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .suggestion-card {
+            background: linear-gradient(145deg, rgba(21, 24, 28, 0.85), rgba(15, 18, 22, 0.75));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: var(--spacing-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: left;
+            transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .suggestion-card:hover {
+            border-color: var(--info-blue);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15);
+        }
+
+        .suggestion-card h3 {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .suggestion-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: var(--spacing-lg);
+            flex-grow: 1;
+        }
+    </style>
 </head>
 
-<body>
+<body class="home-page">
     <header class="navbar">
         <div class="navbar-container">
             <div class="navbar-brand">
                 <a href="index.html" style="text-decoration: none; color: inherit;">WD343</a>
             </div>
             <nav class="navbar-links">
-                <a href="index.html" class="active">/INDEX</a>
-                <a href="articles.html">/ARTICLES</a>
+                <a href="index.html" class="active">/INÍCIO</a>
+                <a href="blog.html">/BLOG</a>
                 <a href="logs.html">/LOGS</a>
-
-                <a href="me.html">/ME</a>
+                <a href="me.html">/SOBRE</a>
             </nav>
         </div>
     </header>
 
     <main class="container">
-        <section class="hero">
-            <div class="metadata-block">
-                <span class="mono-label">STATUS</span> ACTIVE <br>
-                <span class="mono-label">LAST_UPDATE</span> 2026-07-11 <br>
-                <span class="mono-label">LOC</span> LAT_---_BRA_---
-            </div>
-            <h1 class="page-title">
-                <span style="color: #0073a8;">HUMAN</span><span
-                    style="color: var(--info-blue); opacity: 0.8;">&amp;</span><span
-                    style="color: #7cd3ff;">MACHINE</span><br>
-                RESEARCH ENVIRONMENT
-            </h1>
-            <p class="subtitle">Documenting the evolution of knowledge, projects, experiments, and personal thinking
-                over time.</p>
-        </section>
-        <hr class="divider">
+        <section class="welcome-hero">
 
-        <section class="grid-section">
-            <h2 class="section-title">RECENT_ARTICLES</h2>
-            <p style="margin-bottom: var(--spacing-lg);">Access the network of interconnected concepts, articles, and
-                research experiments.</p>
-            <div id="recent-articles-grid" class="card-grid">
-                <!-- Populated by blog.js -->
-            </div>
-            <div style="margin-top: var(--spacing-lg);">
-                <a href="articles.html" class="tech-link">VIEW_ALL_ARTICLES -&gt;</a>
+
+            <h1 class="page-title" style="font-size: 2.5rem;">
+                <span style="color: #7dd3fc;">BEM-VINDO AO</span><br>
+                <span style="color: var(--info-blue);">WD343</span>
+            </h1>
+
+            <p class="subtitle"
+                style="margin: var(--spacing-md) auto 0; max-width: 580px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <span id="random-subtitle-text" style="color: var(--text-primary); font-weight: 500;"></span>
+                <button onclick="setRandomSubtitle()"
+                    style="background: none; border: none; color: var(--text-secondary); opacity: 0.4; cursor: pointer; padding: 2px; display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s ease;"
+                    onmouseover="this.style.opacity='1'; this.style.color='var(--info-blue)'"
+                    onmouseout="this.style.opacity='0.4'; this.style.color='var(--text-secondary)'"
+                    title="Trocar frase">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="23 4 23 10 17 10"></polyline>
+                        <polyline points="1 20 1 14 7 14"></polyline>
+                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                    </svg>
+                </button>
+            </p>
+
+            <div class="suggestion-grid">
+                <div class="suggestion-card">
+                    <div>
+                        <h3>/BLOG</h3>
+                        <p>Artigos, pensamentos e investigações técnicas publicadas no cofre de conhecimento.</p>
+                    </div>
+                    <a href="blog.html" class="tech-link">EXPLORAR BLOG -&gt;</a>
+                </div>
+
+                <div class="suggestion-card">
+                    <div>
+                        <h3>/LOGS</h3>
+                        <p>Atualizações de status em tempo real, notas rápidas e micro-pensamentos do terminal.</p>
+                    </div>
+                    <a href="logs.html" class="tech-link">VER LOGS -&gt;</a>
+                </div>
+
+                <div class="suggestion-card">
+                    <div>
+                        <h3>/SOBRE</h3>
+                        <p>Informações sobre o autor, trajetória profissional, iniciativas e links de contato.</p>
+                    </div>
+                    <a href="me.html" class="tech-link">CONHECER AUTOR -&gt;</a>
+                </div>
             </div>
         </section>
     </main>
@@ -64,13 +168,48 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
-                <span class="mono-label">COPYRIGHT &copy; 2026</span>
-                <span class="mono-label">INITIATIVE: WESLLEY343</span>
+                <span class="mono-label">DIREITOS AUTORAIS &copy; 2026</span>
+                <span class="mono-label">INICIATIVA: WESLLEY343</span>
             </div>
         </div>
     </footer>
 
     <script src="js/blog.js"></script>
+    <script>
+        const subtitles = [
+            "Não desperdice o café",
+            "Connection established",
+            "O importante é saber onde procurar",
+            "Para sua pausa de 5 minutos",
+            "Explore o quanto quiser",
+            "Iaí, a IA ia indo...",
+            "42",
+            "Há alguns pixels faltando no céu",
+            "Welcome to Cleveland",
+            "O teste passou. Vou fazer mais 30 para garantir.",
+            "Hey! Listen!",
+            "Não há nenhum motivo para entrar em pânico",
+            "Ignore esta mensagem",
+            "Telemetry looks good",
+            "Só mais um filtro...",
+            "Você não viu nada. Certo?",
+            "Precisamos de mais dados.",
+            "Interessante...",
+            "Ainda estamos investigando",
+            "Não há nada de novo abaixo do sol",
+        ];
+
+        const subtitleEl = document.getElementById('random-subtitle-text');
+
+        function setRandomSubtitle() {
+            if (subtitleEl) {
+                const randomIndex = Math.floor(Math.random() * subtitles.length);
+                subtitleEl.textContent = subtitles[randomIndex];
+            }
+        }
+
+        setRandomSubtitle();
+    </script>
 </body>
 
 </html>

@@ -32,13 +32,13 @@ function createArticleCard(article) {
             </div>
         </header>
         <footer class="card-footer" style="border-top: none; padding-top: var(--spacing-sm);">
-            <a href="article.html?id=${encodeURIComponent(article.id)}" class="tech-link">READ_ARTICLE -&gt;</a>
+            <a href="article.html?id=${encodeURIComponent(article.id)}" class="tech-link">LER_ARTIGO -&gt;</a>
         </footer>
     `;
     return card;
 }
 
-// Render list of articles (for articles.html or index.html)
+// Render list of articles (for blog.html or index.html)
 async function renderArticleList() {
     const postsContainer = document.getElementById('posts');
     const recentProjectsContainer = document.getElementById('recent-articles-grid'); // for index.html
@@ -107,10 +107,10 @@ async function renderSingleArticle() {
                     displayDate = articleMeta.date.split('T')[0];
                     displayTime = articleMeta.date.split('T')[1].substring(0, 5);
                 }
-                const timeHtml = displayTime ? ` &nbsp;|&nbsp; <span class="mono-label">TIME:</span> ${displayTime}` : '';
+                const timeHtml = displayTime ? ` &nbsp;|&nbsp; <span class="mono-label">HORA:</span> ${displayTime}` : '';
                 
                 metaEl.innerHTML = `
-                    <span class="mono-label">DATE:</span> ${displayDate} ${timeHtml}
+                    <span class="mono-label">DATA:</span> ${displayDate} ${timeHtml}
                 `;
             }
         }
@@ -211,8 +211,8 @@ async function renderLogsList() {
                 htmlContent = `<p>${cleanContent}</p>`;
             }
             
-            const timeHtml = displayTime ? ` &nbsp;|&nbsp; <span class="mono-label">TIME:</span> ${displayTime}` : '';
-            const dateHtml = displayDate ? `<span class="mono-label">DATE:</span> ${displayDate}${timeHtml}` : `<span>LOG_ENTRY_${posts.length - index}</span>`;
+            const timeHtml = displayTime ? ` &nbsp;|&nbsp; <span class="mono-label">HORA:</span> ${displayTime}` : '';
+            const dateHtml = displayDate ? `<span class="mono-label">DATA:</span> ${displayDate}${timeHtml}` : `<span>ENTRADA_LOG_${posts.length - index}</span>`;
             
             entry.innerHTML = `
                 <div style="display: flex; gap: 16px;">
@@ -221,7 +221,7 @@ async function renderLogsList() {
                     </div>
                     <div style="flex-grow: 1; min-width: 0;">
                         <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--info-blue); margin-bottom: 8px;">
-                            <strong>weslley343</strong> <span style="color: var(--text-secondary);">[AUTHOR]</span>
+                            <strong>weslley343</strong> <span style="color: var(--text-secondary);">[AUTOR]</span>
                         </div>
                         <div class="log-content">
                             ${htmlContent}

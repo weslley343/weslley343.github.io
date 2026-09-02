@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logs // weslley343</title>
+    <title>Blog // weslley343</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,9 +12,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/common/global.css">
     <link rel="stylesheet" href="css/index/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        .log-hero-banner {
+        .blog-hero-banner {
             position: relative;
             width: 100vw;
             left: 50%;
@@ -30,12 +29,12 @@
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
             background: linear-gradient(135deg, rgba(13, 15, 18, 0.72) 0%, rgba(13, 15, 18, 0.90) 100%),
-                url('assets/20210711_163112.jpg') center/cover no-repeat;
+                url('assets/IMG_6301.JPG') center/cover no-repeat;
             box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
             overflow: hidden;
         }
 
-        .log-hero-content {
+        .blog-hero-content {
             max-width: 960px;
             margin: 0 auto;
             padding: 0 var(--spacing-md);
@@ -43,59 +42,9 @@
         }
 
         @media (min-width: 768px) {
-            .log-hero-content {
+            .blog-hero-content {
                 padding: 0 var(--spacing-lg);
             }
-        }
-
-        .log-feed {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-lg);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .log-entry {
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            padding: var(--spacing-md);
-            font-family: var(--font-body);
-            color: var(--text-primary);
-        }
-
-        .log-entry p {
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .log-entry p:last-child {
-            margin-bottom: 0;
-        }
-
-        .log-entry ul,
-        .log-entry ol {
-            margin-bottom: var(--spacing-sm);
-            padding-left: var(--spacing-lg);
-        }
-
-        .log-entry code {
-            font-family: var(--font-mono);
-            background-color: var(--background-color);
-            padding: 0.1rem 0.3rem;
-            border-radius: 2px;
-            font-size: 0.9em;
-        }
-
-        .log-meta {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            margin-top: var(--spacing-sm);
-            padding-top: var(--spacing-sm);
-            border-top: 1px solid var(--background-color);
-            display: flex;
-            justify-content: space-between;
         }
     </style>
 </head>
@@ -108,31 +57,34 @@
             </div>
             <nav class="navbar-links">
                 <a href="index.html">/INÍCIO</a>
-                <a href="blog.html">/BLOG</a>
-                <a href="logs.html" class="active">/LOGS</a>
+                <a href="blog.html" class="active">/BLOG</a>
+                <a href="logs.html">/LOGS</a>
                 <a href="me.html">/SOBRE</a>
             </nav>
         </div>
     </header>
 
     <main class="container">
-        <section class="hero log-hero-banner">
-            <div class="log-hero-content">
+        <section class="hero blog-hero-banner">
+            <div class="blog-hero-content">
                 <h1 class="page-title">
-                    <span style="color: #7dd3fc;">LOGS</span><span style="color: var(--info-blue); opacity: 0.8;">_</span><br>
-                    <span style="color: #0284c7;">DO_SISTEMA</span>
+                    <span style="color: #0073a8;">HUMANOS&amp;</span><br>
+                    <span style="color: #7cd3ff;">MÁQUINAS.</span>
                 </h1>
-                <p class="subtitle">Atualizações de status em tempo real, micro-pensamentos e notas rápidas de
-                    desenvolvimento.</p>
+                <p class="subtitle">
+                    Este espaço funciona como uma espécie de diário de bordo, os textos são gerados com base em
+                    pesquisas
+                    manuais e escritos de maneira orgânica.
+                </p>
             </div>
         </section>
 
         <hr class="divider">
 
         <section class="grid-section">
-            <div id="log-feed" class="log-feed">
-                <p style="color: var(--text-secondary); font-family: var(--font-mono); text-align: center;">[ LOG DO
-                    SISTEMA ] Carregando registros do terminal...</p>
+            <div id="posts">
+                <p style="color: var(--text-secondary); font-family: var(--font-mono);">[ LOG DO SISTEMA ] Carregando
+                    registros do cofre...</p>
             </div>
         </section>
     </main>
