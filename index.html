@@ -49,13 +49,19 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: var(--spacing-md);
-            max-width: 760px;
+            max-width: 1024px;
             margin: var(--spacing-xl) auto 0;
         }
 
         @media (min-width: 768px) {
             .suggestion-grid {
                 grid-template-columns: repeat(3, 1fr);
+                gap: var(--spacing-lg);
+            }
+
+            .suggestion-card {
+                padding: var(--spacing-xl) var(--spacing-lg);
+                min-height: 220px;
             }
         }
 
@@ -141,7 +147,7 @@
                 <div class="suggestion-card">
                     <div>
                         <h3>/BLOG</h3>
-                        <p>Artigos, pensamentos e investigações técnicas publicadas no cofre de conhecimento.</p>
+                        <p>Artigos, pensamentos e investigações técnicas.</p>
                     </div>
                     <a href="blog.html" class="tech-link">EXPLORAR BLOG -&gt;</a>
                 </div>
@@ -149,7 +155,7 @@
                 <div class="suggestion-card">
                     <div>
                         <h3>/LOGS</h3>
-                        <p>Atualizações de status em tempo real, notas rápidas e micro-pensamentos do terminal.</p>
+                        <p>Atualizações de status em tempo real e notas rápidas.</p>
                     </div>
                     <a href="logs.html" class="tech-link">VER LOGS -&gt;</a>
                 </div>
@@ -157,7 +163,7 @@
                 <div class="suggestion-card">
                     <div>
                         <h3>/SOBRE</h3>
-                        <p>Informações sobre o autor, trajetória profissional, iniciativas e links de contato.</p>
+                        <p>Informações sobre o autor e links de contato.</p>
                     </div>
                     <a href="me.html" class="tech-link">CONHECER AUTOR -&gt;</a>
                 </div>
@@ -180,16 +186,14 @@
             "Não desperdice o café",
             "Connection established",
             "O importante é saber onde procurar",
-            "Para sua pausa de 5 minutos",
+            "Feito para sua pausa de 5 minutos",
             "Explore o quanto quiser",
             "Iaí, a IA ia indo...",
-            "42",
             "Há alguns pixels faltando no céu",
             "Welcome to Cleveland",
-            "O teste passou. Vou fazer mais 30 para garantir.",
+            "O teste passou. Vou fazer mais 30 só para garantir.",
             "Hey! Listen!",
             "Não há nenhum motivo para entrar em pânico",
-            "Ignore esta mensagem",
             "Telemetry looks good",
             "Só mais um filtro...",
             "Você não viu nada. Certo?",
