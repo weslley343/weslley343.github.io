@@ -447,3 +447,56 @@ body.home-page {
         padding: 0;
     }
 }
+/* Social Links - Linktree Style */
+.social-links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 480px;
+    margin: 0 auto var(--spacing-xl);
+    padding: 0 var(--spacing-md);
+}
+
+.social-link-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(145deg, rgba(21, 24, 28, 0.85), rgba(15, 18, 22, 0.75));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px 24px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    width: 100%;
+}
+
+.social-link-card svg {
+    color: var(--info-blue);
+    transition: color 0.2s ease;
+}
+
+.social-link-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--info-blue);
+    background: linear-gradient(145deg, rgba(30, 35, 40, 0.9), rgba(21, 24, 28, 0.8));
+    box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15);
+}
+
+.social-link-card:active {
+    transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+    .social-links-container {
+        padding: 0;
+    }
+}
