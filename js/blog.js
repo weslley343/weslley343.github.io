@@ -5,6 +5,7 @@ const ARTICLES_DIR = 'content/content/articles/';
 function createArticleCard(article) {
     const card = document.createElement('article');
     card.className = 'technical-card';
+    card.style.position = 'relative'; // Permite que o link esticado cubra toda a div
 
     // Create tags HTML
     const tagsHtml = article.tags.map(tag => `<span class="badge badge-info">#${tag}</span>`).join(' ');
@@ -24,7 +25,7 @@ function createArticleCard(article) {
     card.innerHTML = `
         <header class="card-header" style="margin-bottom: 0;">
             <h3 class="card-title">${article.title}</h3>
-            <div class="card-meta" style="margin-bottom: 8px;">
+            <div class="card-meta" style="margin-bottom: 8px; position: relative; z-index: 2;">
                 ${tagsHtml}
             </div>
             <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary);">
@@ -32,7 +33,10 @@ function createArticleCard(article) {
             </div>
         </header>
         <footer class="card-footer" style="border-top: none; padding-top: var(--spacing-sm);">
-            <a href="article.html?id=${encodeURIComponent(article.id)}" class="tech-link">LER_ARTIGO -&gt;</a>
+            <a href="article.html?id=${encodeURIComponent(article.id)}" class="tech-link">
+                LER_ARTIGO -&gt;
+                <span style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 1;"></span>
+            </a>
         </footer>
     `;
     return card;
