@@ -194,11 +194,12 @@ a:hover {
         left: 0 !important;
         right: 0 !important;
         top: auto !important;
-        height: 56px;
+        min-height: 56px; /* Alterado de height fixo para min-height */
+        height: calc(56px + env(safe-area-inset-bottom, 0px));
         display: flex !important;
         align-items: center;
         justify-content: space-around;
-        padding: 0 var(--spacing-sm);
+        padding: 0 var(--spacing-xs); /* Reduzido o padding lateral do container */
         padding-bottom: env(safe-area-inset-bottom, 0px);
         background-color: rgba(13, 15, 18, 0.95) !important;
         backdrop-filter: blur(12px) !important;
@@ -207,12 +208,17 @@ a:hover {
         box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
         z-index: 9999 !important;
         font-family: var(--font-mono);
-        font-size: 0.9rem;
+        font-size: clamp(0.75rem, 3.5vw, 0.9rem); /* Fonte fluida para evitar overflow horizontal */
+        white-space: nowrap; /* Impede que o texto quebre de linha e salte a div */
+    }
+
+    .navbar-links a {
+        padding: var(--spacing-xs) 4px; /* Reduzindo um pouco o padding interno dos links no mobile */
     }
 
     body {
         padding-top: 60px !important;   /* Espaço para a logo fixa no topo */
-        padding-bottom: 70px !important; /* Espaço para o menu no rodapé do celular */
+        padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px)) !important; /* Espaço para o menu no rodapé do celular */
     }
 }
 
