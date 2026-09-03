@@ -1,20 +1,35 @@
 [
   {
+    "filename": "Otimizando a Performance.md",
+    "id": 3,
+    "date": "2026-09-03T10:00:00-03:00",
+    "tags": [
+      "frontend",
+      "performance",
+      "javascript"
+    ],
+    "title": "Otimizando a Performance de Aplicações Frontend"
+  },
+  {
     "filename": "Um experimento curioso.md",
     "id": 2,
-    "date": "2026-07-11T14:37:18-03:00",
+    "date": "2026-09-02T14:30:00-03:00",
     "tags": [
-      "article"
+      "article",
+      "template",
+      "experimento"
     ],
-    "title": "Um experimento curioso"
+    "title": "Outro Artigo de Modelo"
   },
   {
     "filename": "Bem Vindo.md",
     "id": 1,
-    "date": "2026-07-11T14:35:18-03:00",
+    "date": "2026-09-01T10:00:00-03:00",
     "tags": [
-      "article"
+      "article",
+      "template",
+      "boasvindas"
     ],
-    "title": "Bem-vindo"
+    "title": "Artigo de Boas-Vindas"
   }
 ]
