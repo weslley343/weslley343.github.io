@@ -1,11 +1,11 @@
 /* Gerado automaticamente por build_index.py a partir de content/config/theme.json */
 :root {
-  --primary-color: #38bdf8;
-  --secondary-color: #10b981;
-  --bg-color: #0d0f12;
-  --surface-color: #15181c;
-  --text-primary: #e0e4eb;
-  --text-secondary: #9aa0a6;
+  --primary-color: #a6e22e;
+  --secondary-color: #fd971f;
+  --bg-color: #272822;
+  --surface-color: #3e3d32;
+  --text-primary: #f8f8f2;
+  --text-secondary: #cfcfc2;
   --info-blue: var(--primary-color);
   --growth-green: var(--secondary-color);
 }

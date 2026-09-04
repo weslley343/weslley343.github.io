@@ -1,4 +1,4 @@
-const LOGS_JSON_URL = 'js/logs.json';
+const LOGS_JSON_URL = 'content/content/logs/logs.json';
 
 async function renderLogsList() {
     const logFeedContainer = document.getElementById('log-feed');
@@ -35,12 +35,6 @@ async function renderLogsList() {
                 }
             }
 
-            // Setup tags
-            let tagsHtml = '';
-            if (log.tags && log.tags.length > 0) {
-                tagsHtml = log.tags.map(tag => `<span class="badge badge-info" style="margin-right: 4px;">#${tag}</span>`).join('');
-            }
-
             // Render markdown using marked.js
             let htmlContent = '';
             if (typeof marked !== 'undefined') {
@@ -63,9 +57,6 @@ async function renderLogsList() {
                         </div>
                         <div class="log-content">
                             ${htmlContent}
-                        </div>
-                        <div style="margin-bottom: 8px;">
-                            ${tagsHtml}
                         </div>
                         <div class="log-meta" style="align-items: center;">
                             <div>${dateHtml}</div>
