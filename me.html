@@ -30,46 +30,41 @@
     </header>
 
     <main class="container">
-        <section class="hero">
-            <div class="profile-badge">
-
-                <div class="profile-avatar">
-                    <img src="https://github.com/weslleydavid343.png" alt="Weslley David">
+        <section class="hero" style="max-width: 900px; margin: 0 auto; padding-top: 2rem;">
+            <div style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: flex-start;">
+                
+                <!-- Left Sidebar: Avatar Only -->
+                <div style="flex: 1; min-width: 250px; max-width: 280px; display: flex; flex-direction: column; gap: 1.5rem;">
+                    <img src="https://github.com/weslleydavid343.png" alt="Weslley David" style="width: 100%; border-radius: 12px; border: 1px solid var(--border-color); object-fit: cover; aspect-ratio: 1 / 1;">
                 </div>
-                <div class="profile-details">
-                    <div class="profile-info">
-                        <h2 class="profile-name">Weslley David</h2>
-                        <div class="profile-role">Analista de Requisitos</div>
-                        <div class="profile-status">
-                            <div class="status-item">
-                                <span class="status-indicator false"></span>
-                                <span class="status-text">open_to_work = false</span>
-                            </div>
-                            <div class="status-item">
-                                <span class="status-indicator true"></span>
-                                <span class="status-text">learning = always</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="badge-barcode-container">
-                        <div class="badge-barcode"></div>
-                        <div class="badge-id">ID: WD-343-2026</div>
-                    </div>
+
+                <!-- Right Content: Description -->
+                <div style="flex: 2; min-width: 300px;">
+                    <h1 class="page-title" style="font-size: 2.5rem; margin-bottom: 2rem; line-height: 1.2; text-align: left;">
+                        <span style="color: #7dd3fc;">OLÁ, MEU NOME É</span><br>
+                        <span style="color: var(--info-blue);">WESLLEY DAVID</span>
+                    </h1>
+                    
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary);">
+                        <span style="color: var(--text-primary); font-weight: 500;">Modelo</span>, <span style="color: var(--text-primary); font-weight: 500;">Desenvolvo</span> e <span style="color: var(--text-primary); font-weight: 500;">Testo sistemas</span>, usando principalmente <span style="color: var(--text-primary); font-weight: 500;">Python</span> e ferramentas como <span style="color: var(--text-primary); font-weight: 500;">Postgres</span>, <span style="color: var(--text-primary); font-weight: 500;">DjangoREST</span>, <span style="color: var(--text-primary); font-weight: 500;">NextJS</span> e <span style="color: var(--text-primary); font-weight: 500;">Docker</span>. Tenho como objetivo aplicar <span style="color: var(--text-primary); font-weight: 500;">poder computacional</span> para causar <span style="color: var(--text-primary); font-weight: 500;">impacto social</span> levando em consideração a <span style="color: var(--text-primary); font-weight: 500;">responsabilidade ética</span>. Além disso, adoro <span style="color: var(--text-primary); font-weight: 500;">escrever</span>, e espero poder compartilhar este hobbie com vocês.
+                    </p>
                 </div>
             </div>
-            <h1 class="page-title" style="font-size: 2.5rem; margin-bottom: var(--spacing-lg);">
-                <span style="color: #7dd3fc;">OLÁ, MEU NOME É</span><br>
-                <span style="color: var(--info-blue);">WESLLEY DAVID</span>
-            </h1>
-            <p class="subtitle"
-                style="max-width: 800px; margin-bottom: var(--spacing-md); text-indent: var(--spacing-lg);">
-                <span style="color: var(--text-primary); font-weight: 500;">Modelo</span>, <span style="color: var(--text-primary); font-weight: 500;">Desenvolvo</span> e <span style="color: var(--text-primary); font-weight: 500;">Testo sistemas</span>, usando principalmente <span style="color: var(--text-primary); font-weight: 500;">Python</span> e ferramentas como <span style="color: var(--text-primary); font-weight: 500;">Postgres</span>, <span style="color: var(--text-primary); font-weight: 500;">DjangoREST</span>, <span style="color: var(--text-primary); font-weight: 500;">NextJS</span> e <span style="color: var(--text-primary); font-weight: 500;">Docker</span>. Tenho como objetivo aplicar <span style="color: var(--text-primary); font-weight: 500;">poder computacional</span> para causar <span style="color: var(--text-primary); font-weight: 500;">impacto social</span> levando em consideração a <span style="color: var(--text-primary); font-weight: 500;">responsabilidade ética</span>. Além disso, adoro <span style="color: var(--text-primary); font-weight: 500;">escrever</span>, e espero poder compartilhar este hobbie com vocês.
-            </p>
-            <p class="subtitle" style="max-width: 800px; text-indent: var(--spacing-lg);">
+
+            <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-top: 2rem;">
                 Este espaço servirá para <span style="color: var(--text-primary); font-weight: 500;">documentar minha evolução</span> e partilhar meu <span style="color: var(--text-primary); font-weight: 500;">aprendizado</span>, <span style="color: var(--text-primary); font-weight: 500;">dilemas</span> e <span style="color: var(--text-primary); font-weight: 500;">percepções de mercado</span> à medida que dou novos passos. Pretendo desvendar a equação de um profissional capaz de <span style="color: var(--text-primary); font-weight: 500;">nunca estar desatualizado</span>. Atualmente meu <span style="color: var(--text-primary); font-weight: 500;">foco</span> está no estudo de <span style="color: var(--text-primary); font-weight: 500;">análise de dados</span>, <span style="color: var(--text-primary); font-weight: 500;">eletrônica</span> e <span style="color: var(--text-primary); font-weight: 500;">thinking frameworks</span>.
             </p>
-
         </section>
+
+        <section id="projetos-section" style="max-width: 900px; margin: 4rem auto 0 auto;">
+            <h2 style="font-family: var(--font-heading); font-size: 2rem; color: #7dd3fc; margin-bottom: 2rem; text-align: left; text-transform: uppercase;">Projetos</h2>
+            <div id="projects-container" class="card-list">
+                <!-- Projects will be loaded here via JS -->
+            </div>
+        </section>
+        
+        <!-- JS load script -->
+        <script src="js/project.js"></script>
 
         <hr class="divider">
 

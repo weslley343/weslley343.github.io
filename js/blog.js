@@ -55,22 +55,29 @@ async function renderArticleList() {
         if (!response.ok) throw new Error('Failed to load articles.json');
 
         const articles = await response.json();
-
         if (postsContainer) {
             postsContainer.innerHTML = '';
             // Apply list layout instead of grid for full articles page
             postsContainer.className = 'card-list';
-            articles.forEach(article => {
-                postsContainer.appendChild(createArticleCard(article));
-            });
+            if (articles.length === 0) {
+                postsContainer.innerHTML = '<div style="text-align: center; padding: 3rem 1rem; color: var(--text-secondary);"><p>Nenhum artigo publicado ainda.</p></div>';
+            } else {
+                articles.forEach(article => {
+                    postsContainer.appendChild(createArticleCard(article));
+                });
+            }
         }
 
         if (recentProjectsContainer) {
             recentProjectsContainer.innerHTML = '';
-            // Show only the 2 most recent for index
-            articles.slice(0, 2).forEach(article => {
-                recentProjectsContainer.appendChild(createArticleCard(article));
-            });
+            if (articles.length === 0) {
+                recentProjectsContainer.innerHTML = '<div style="text-align: center; padding: 2rem 1rem; color: var(--text-secondary); grid-column: 1 / -1;"><p>Nenhum artigo recente.</p></div>';
+            } else {
+                // Show only the 2 most recent for index
+                articles.slice(0, 2).forEach(article => {
+                    recentProjectsContainer.appendChild(createArticleCard(article));
+                });
+            }
         }
 
     } catch (error) {
@@ -96,7 +103,7 @@ async function renderSingleArticle() {
         // Fetch article metadata
         const responseList = await fetch(`${ARTICLES_JSON_URL}?t=${new Date().getTime()}`);
         const articles = await responseList.json();
-        const articleMeta = articles.find(a => a.id === parseInt(articleId));
+        let articleMeta = articles.find(a => a.id === parseInt(articleId));
 
         if (articleMeta) {
             document.title = `${articleMeta.title} // weslley343`;
@@ -117,6 +124,8 @@ async function renderSingleArticle() {
                     ${displayDate} ${timeHtml}
                 `;
             }
+        } else {
+            throw new Error('Artigo não encontrado no índice.');
         }
 
         // Fetch markdown content
@@ -156,102 +165,9 @@ async function renderSingleArticle() {
     }
 }
 
-// Render microposts (for logs.html)
-async function renderLogsList() {
-    const logFeedContainer = document.getElementById('log-feed');
-    if (!logFeedContainer) return;
-
-    try {
-        const logsUrl = 'content/content/logs/logs.md';
-        const response = await fetch(`${logsUrl}?t=${new Date().getTime()}`);
-        if (!response.ok) throw new Error('Failed to load logs.md');
-
-        const rawText = await response.text();
-
-        // Split by 3 or more underscores
-        const posts = rawText.split(/_{3,}/)
-            .map(p => p.trim())
-            .filter(p => p.length > 0)
-            .reverse(); // Newest first
-
-        logFeedContainer.innerHTML = '';
-
-        posts.forEach((postContent, index) => {
-            const entry = document.createElement('div');
-            entry.className = 'log-entry';
-
-            // Extract metadata
-            let displayDate = '';
-            let displayTime = '';
-            let tagsHtml = '';
-
-            const dataMatch = postContent.match(/^(?:data|date):\s*(.+)$/m);
-            if (dataMatch) {
-                const fullDate = dataMatch[1].trim();
-                if (fullDate.includes('T')) {
-                    displayDate = fullDate.split('T')[0];
-                    displayTime = fullDate.split('T')[1].substring(0, 5);
-                } else {
-                    displayDate = fullDate;
-                }
-            }
-
-            const tagsMatch = postContent.match(/^tags:\s*(.+)$/m);
-            if (tagsMatch) {
-                const tagsRaw = tagsMatch[1];
-                const tagsList = tagsRaw.split(/\s+/).filter(t => t.startsWith('#')).map(t => t.replace('#', ''));
-                tagsHtml = tagsList.map(tag => `<span class="badge badge-info" style="margin-right: 4px;">#${tag}</span>`).join('');
-            }
-
-            // Clean markdown
-            let cleanContent = postContent.replace(/^(?:data|date):\s*.*?\n/gm, '');
-            cleanContent = cleanContent.replace(/^tags:\s*.*?\n/gm, '');
-
-            // Render markdown using marked.js
-            let htmlContent = '';
-            if (typeof marked !== 'undefined') {
-                htmlContent = marked.parse(cleanContent);
-            } else {
-                htmlContent = `<p>${cleanContent}</p>`;
-            }
-
-            const timeHtml = displayTime ? ` &nbsp;|&nbsp; ${displayTime}` : '';
-            const dateHtml = displayDate ? `${displayDate}${timeHtml}` : `<span>ENTRADA_LOG_${posts.length - index}</span>`;
-
-            entry.innerHTML = `
-                <div style="display: flex; gap: 16px;">
-                    <div style="flex-shrink: 0;">
-                        <img src="content/content/media/img/avatar/avatar.jpg" alt="Avatar" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border-color);">
-                    </div>
-                    <div style="flex-grow: 1; min-width: 0;">
-                        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--info-blue); margin-bottom: 8px;">
-                            <strong>weslley343</strong>
-                        </div>
-                        <div class="log-content">
-                            ${htmlContent}
-                        </div>
-                        <div style="margin-bottom: 8px;">
-                            ${tagsHtml}
-                        </div>
-                        <div class="log-meta" style="align-items: center;">
-                            <div>${dateHtml}</div>
-                        </div>
-                    </div>
-                </div>
-            `;
-
-            logFeedContainer.appendChild(entry);
-        });
-
-    } catch (error) {
-        console.error('Error rendering logs:', error);
-        logFeedContainer.innerHTML = '<p>Erro ao carregar os logs do sistema.</p>';
-    }
-}
 
 // Initialization
 document.addEventListener('DOMContentLoaded', () => {
     renderArticleList();
     renderSingleArticle();
-    renderLogsList();
 });
