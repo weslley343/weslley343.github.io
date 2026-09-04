@@ -1,4 +1,6 @@
 :root {
+    --primary-color: #38bdf8;
+    --secondary-color: #10b981;
     --bg-color: #0d0f12; /* Dark, neutral, research vibe */
     --surface-color: #15181c;
     --border-color: #2a2e35;
@@ -6,8 +8,8 @@
     --text-secondary: #9aa0a6;
     
     /* Semantic Colors */
-    --info-blue: #38bdf8;
-    --growth-green: #10b981;
+    --info-blue: var(--primary-color);
+    --growth-green: var(--secondary-color);
     --warning-orange: #f59e0b;
     --critical-red: #ef4444;
 

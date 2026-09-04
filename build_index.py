@@ -12,6 +12,9 @@ PROJECTS_OUTPUT = 'js/projects.json'
 LOGS_FILE = 'content/content/logs/logs.json'
 LOGS_OUTPUT = 'js/logs.json'
 
+THEME_FILE = 'content/config/theme.json'
+THEME_OUTPUT = 'css/common/theme.css'
+
 def parse_markdown(filepath, filename):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
@@ -103,6 +106,39 @@ def build_logs_index(logs_file, output_file):
         print(f"Logs file not found: {logs_file}")
 
 
+def build_theme_css(theme_file, output_file):
+    if os.path.exists(theme_file):
+        with open(theme_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        primary = data.get('primaryColor', '#38bdf8')
+        secondary = data.get('secondaryColor', '#10b981')
+        bg = data.get('backgroundColor', '#0d0f12')
+        surface = data.get('surfaceColor', '#15181c')
+        text_primary = data.get('textPrimary', '#e0e4eb')
+        text_secondary = data.get('textSecondary', '#9aa0a6')
+
+        css_content = f"""/* Gerado automaticamente por build_index.py a partir de content/config/theme.json */
+:root {{
+  --primary-color: {primary};
+  --secondary-color: {secondary};
+  --bg-color: {bg};
+  --surface-color: {surface};
+  --text-primary: {text_primary};
+  --text-secondary: {text_secondary};
+  --info-blue: var(--primary-color);
+  --growth-green: var(--secondary-color);
+}}
+"""
+        os.makedirs(os.path.dirname(output_file), exist_ok=True)
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write(css_content)
+            
+        print(f"Theme CSS generated successfully at {output_file}.")
+    else:
+        print(f"Theme file not found: {theme_file}")
+
+
 def main():
     if not os.path.exists('js'):
         os.makedirs('js')
@@ -110,6 +146,7 @@ def main():
     process_directory(ARTICLES_DIR, ARTICLES_OUTPUT, "articles")
     process_directory(PROJECTS_DIR, PROJECTS_OUTPUT, "projects")
     build_logs_index(LOGS_FILE, LOGS_OUTPUT)
+    build_theme_css(THEME_FILE, THEME_OUTPUT)
 
 if __name__ == '__main__':
     main()
