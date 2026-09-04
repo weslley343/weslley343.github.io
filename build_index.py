@@ -9,7 +9,7 @@ ARTICLES_OUTPUT = 'js/articles.json'
 PROJECTS_DIR = 'content/content/projects'
 PROJECTS_OUTPUT = 'js/projects.json'
 
-LOGS_FILE = 'content/content/logs/logs.md'
+LOGS_FILE = 'content/content/logs/logs.json'
 LOGS_OUTPUT = 'js/logs.json'
 
 def parse_markdown(filepath, filename):
@@ -91,46 +91,9 @@ def process_directory(directory, output_file, name_label):
     print(f"Index built successfully. {len(items)} {name_label} found.")
 
 def build_logs_index(logs_file, output_file):
-    items = []
     if os.path.exists(logs_file):
         with open(logs_file, 'r', encoding='utf-8') as f:
-            content = f.read()
-        
-        # Split by 3 or more underscores
-        posts = re.split(r'_{3,}', content)
-        posts = [p.strip() for p in posts if p.strip()]
-        
-        for idx, post_content in enumerate(posts):
-            metadata = {
-                'id': idx + 1
-            }
-            
-            # Extract date
-            data_match = re.search(r'^(?:data|date):\s*(.+)$', post_content, re.MULTILINE)
-            if data_match:
-                metadata['date'] = data_match.group(1).strip()
-            else:
-                metadata['date'] = ''
-                
-            # Extract tags
-            tags_match = re.search(r'^tags:\s*(.+)$', post_content, re.MULTILINE)
-            if tags_match:
-                tags_str = tags_match.group(1)
-                metadata['tags'] = [t.strip().replace('#', '') for t in tags_str.split() if t.startswith('#')]
-            else:
-                metadata['tags'] = []
-                
-            # Clean content
-            clean_content = re.sub(r'^(?:data|date):\s*.*?\n', '', post_content, flags=re.MULTILINE)
-            clean_content = re.sub(r'^tags:\s*.*?\n', '', clean_content, flags=re.MULTILINE)
-            metadata['content'] = clean_content.strip()
-            
-            items.append(metadata)
-            
-        # Reverse to get newest first (assuming logs are appended at the bottom, or kept as they are if already reverse chronological)
-        # We will sort by date descending just to be safe, if dates are present and valid ISO strings.
-        # But wait, original JS reversed the array. Let's just reverse the array like JS did.
-        items.reverse()
+            items = json.load(f)
             
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(items, f, ensure_ascii=False, indent=2)

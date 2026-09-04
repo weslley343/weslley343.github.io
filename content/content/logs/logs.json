@@ -1,0 +1,29 @@
+[
+  {
+    "id": 3,
+    "date": "2026-09-03T08:15:00-03:00",
+    "tags": [
+      "log",
+      "status"
+    ],
+    "content": "Inicialização do sistema concluída. Todos os sistemas estão operando normalmente."
+  },
+  {
+    "id": 2,
+    "date": "2026-09-02T14:30:00-03:00",
+    "tags": [
+      "atualizacao",
+      "demo"
+    ],
+    "content": "Aqui está outro exemplo de um micropost. Você pode usá-lo para compartilhar pensamentos rápidos, atualizações ou mudanças de status, como em um microblog."
+  },
+  {
+    "id": 1,
+    "date": "2026-09-01T10:00:00-03:00",
+    "tags": [
+      "template",
+      "sistema"
+    ],
+    "content": "- Esta é uma entrada de log de modelo.\n- Ela mostra como listas e textos aparecerão no feed do sistema."
+  }
+]
