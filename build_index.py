@@ -2,6 +2,7 @@ import os
 import json
 import re
 import sys
+import datetime
 
 ARTICLES_DIR = 'content/content/articles'
 ARTICLES_OUTPUT = 'js/articles.json'
@@ -17,44 +18,44 @@ def parse_markdown(filepath, filename):
         'filename': filename
     }
 
-    # Strict: Extract id
-    id_match = re.search(r'^id:\s*(\d+)$', content, re.MULTILINE)
-    if not id_match:
-        raise ValueError(f"Missing or invalid 'id:' in {filename}")
-    metadata['id'] = int(id_match.group(1))
+    # 1. Extract id (optional fallback to file timestamp)
+    id_match = re.search(r'^(?:id|ID):\s*(\d+)$', content, re.MULTILINE)
+    if id_match:
+        metadata['id'] = int(id_match.group(1))
+    else:
+        metadata['id'] = int(os.path.getmtime(filepath))
 
-    # Strict: Extract data (date)
-    data_match = re.search(r'^data:\s*(.+)$', content, re.MULTILINE)
-    if not data_match:
-        raise ValueError(f"Missing or invalid 'data:' in {filename}")
-    metadata['date'] = data_match.group(1).strip()
+    # 2. Extract data or date (optional fallback to file mtime yyyy-mm-dd)
+    data_match = re.search(r'^(?:data|date):\s*(.+)$', content, re.MULTILINE)
+    if data_match:
+        metadata['date'] = data_match.group(1).strip()
+    else:
+        metadata['date'] = datetime.datetime.fromtimestamp(os.path.getmtime(filepath)).strftime('%Y-%m-%d')
         
-    # Strict: Extract tags
+    # 3. Extract tags (optional fallback to hashtag search or empty list)
     tags_match = re.search(r'^tags:\s*(.+)$', content, re.MULTILINE)
-    if not tags_match:
-        raise ValueError(f"Missing or invalid 'tags:' in {filename}")
-    
-    tags_str = tags_match.group(1)
-    if '#' not in tags_str:
-        raise ValueError(f"Tags must contain at least one '#' in {filename}")
-    
-    metadata['tags'] = [t.strip().replace('#', '') for t in tags_str.split() if t.startswith('#')]
+    if tags_match:
+        tags_str = tags_match.group(1)
+        metadata['tags'] = [t.strip().replace('#', '') for t in tags_str.split() if t.strip()]
+    else:
+        # Search for inline #tags in content
+        found_tags = re.findall(r'#([a-zA-Z0-9_\-]+)', content)
+        metadata['tags'] = list(set(found_tags))
             
-    # Extract title from frontmatter, fallback to H1
+    # 4. Extract title from frontmatter, fallback to H1 or filename
     title_match = re.search(r'^title:\s*(.+)$', content, re.MULTILINE)
     if title_match:
         title_raw = title_match.group(1).strip()
-        # Remove surrounding quotes and leading #
         title_raw = title_raw.strip('"\'')
         if title_raw.startswith('# '):
             title_raw = title_raw[2:]
         metadata['title'] = title_raw.strip()
     else:
-        # Strict: Extract title from first H1
         h1_match = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
-        if not h1_match:
-            raise ValueError(f"Missing H1 title ('# Title') in {filename}")
-        metadata['title'] = h1_match.group(1).strip()
+        if h1_match:
+            metadata['title'] = h1_match.group(1).strip()
+        else:
+            metadata['title'] = os.path.splitext(filename)[0]
             
     return metadata
 
