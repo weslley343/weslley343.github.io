@@ -4,7 +4,7 @@
 
 ---
 
-![Existem 4 Lobos Dentro de Você](../../media/projects/o_cerebro_do_desenvolvedor_sobrecarga_cognitiva_e_os_4_lobos_da_programacao/2026-09-04_16-35-29.webp)
+![Existem 4 Lobos Dentro de Você](../media/projects/o_cerebro_do_desenvolvedor_sobrecarga_cognitiva_e_os_4_lobos_da_programacao/2026-09-04_16-35-29.webp)
 
 ---
 

@@ -147,9 +147,9 @@ async function renderSingleArticle() {
         cleanMarkdown = cleanMarkdown.replace(/^```[a-z]*\n---\s*\n.*?\n---\s*\n```\s*\n/ms, '');
 
         // Fix relative image paths from Obsidian
-        // Since article.html is in the root directory, a path like ../media/img.jpg 
+        // Since article.html is in the root directory, a path like ../media/img.jpg or ../../media/img.jpg
         // needs to point to content/content/media/img.jpg
-        cleanMarkdown = cleanMarkdown.replace(/!\[(.*?)\]\(\.\.\/(.*?)\)/g, '![$1](content/content/$2)');
+        cleanMarkdown = cleanMarkdown.replace(/!\[(.*?)\]\((?:\.\.\/)+(.*?)\)/g, '![$1](content/content/$2)');
 
         // Render markdown
         // Requires marked.js loaded

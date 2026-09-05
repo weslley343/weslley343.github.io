@@ -128,7 +128,7 @@ async function renderSingleProject() {
         cleanMarkdown = cleanMarkdown.replace(/^```[a-z]*\n---\s*\n.*?\n---\s*\n```\s*\n/ms, '');
 
         // Fix relative image paths from Obsidian
-        cleanMarkdown = cleanMarkdown.replace(/!\[(.*?)\]\(\.\.\/(.*?)\)/g, '![$1](content/content/$2)');
+        cleanMarkdown = cleanMarkdown.replace(/!\[(.*?)\]\((?:\.\.\/)+(.*?)\)/g, '![$1](content/content/$2)');
 
         // Render markdown
         // Requires marked.js loaded
