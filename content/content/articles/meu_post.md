@@ -8,6 +8,6 @@ tags: #tecnologia #flutter
 
 Esta é uma introdução incrível.
 
-![Legenda do Obsidian](../media/articles/artigo_sobre_tecnologia_e_inovacao/2026-09-05_08-08-53.webp)
+![Legenda do Obsidian](../media/articles/artigo_sobre_tecnologia_e_inovacao/2026-09-05_08-09-29.webp)
 
 Fim do post.
