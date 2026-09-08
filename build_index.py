@@ -4,10 +4,10 @@ import re
 import sys
 import datetime
 
-ARTICLES_DIR = 'content/content/articles'
+ARTICLES_DIR = 'content/articles'
 ARTICLES_OUTPUT = 'js/articles.json'
 
-PROJECTS_DIR = 'content/content/projects'
+PROJECTS_DIR = 'content/projects'
 PROJECTS_OUTPUT = 'js/projects.json'
 
 def parse_markdown(filepath, filename):

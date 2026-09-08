@@ -1,5 +1,5 @@
 const ARTICLES_JSON_URL = 'js/articles.json';
-const ARTICLES_DIR = 'content/content/articles/';
+const ARTICLES_DIR = 'content/articles/';
 
 // Utility to create a card for an article
 function createArticleCard(article) {
@@ -148,8 +148,8 @@ async function renderSingleArticle() {
 
         // Fix relative image paths from Obsidian
         // Since article.html is in the root directory, a path like ../media/img.jpg or ../../media/img.jpg
-        // needs to point to content/content/media/img.jpg
-        cleanMarkdown = cleanMarkdown.replace(/!\[(.*?)\]\((?:\.\.\/)+(.*?)\)/g, '![$1](content/content/$2)');
+        // needs to point to content/media/img.jpg
+        cleanMarkdown = cleanMarkdown.replace(/!\[(.*?)\]\((?:\.\.\/)+(.*?)\)/g, '![$1](content/$2)');
 
         // Render markdown
         // Requires marked.js loaded

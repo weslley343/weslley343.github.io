@@ -21,7 +21,7 @@
             right: 50%;
             margin-left: -50vw;
             margin-right: -50vw;
-            min-height: 340px;
+            min-height: 280px;
             display: flex;
             align-items: center;
             border-radius: 0;
@@ -29,9 +29,9 @@
             border-right: none;
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
-            background: linear-gradient(135deg, rgba(13, 15, 18, 0.72) 0%, rgba(13, 15, 18, 0.90) 100%),
-                url('assets/IMG_6301_min.JPG') center/cover no-repeat;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(180deg, rgba(244, 235, 208, 0.72) 0%, rgba(244, 235, 208, 0.90) 100%),
+                url('assets/IMG_6301_min_grain.webp') center/cover no-repeat;
+            box-shadow: 0 8px 24px rgba(60, 45, 30, 0.12);
             overflow: hidden;
         }
 
@@ -51,16 +51,16 @@
 </head>
 
 <body>
-    <header class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-brand">
-                <a href="index.html" style="text-decoration: none; color: inherit;">WD343</a>
-            </div>
-            <nav class="navbar-links">
-                <a href="index.html">/INÍCIO</a>
-                <a href="blog.html" class="active">/BLOG</a>
-                <a href="logs.html">/LOGS</a>
-                <a href="me.html">/SOBRE</a>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" style="text-decoration: none;">
+                <span class="black-badge-title" style="font-size: 1.5rem; padding: 6px 20px; margin: 0;">WD343</span>
+            </a>
+            <nav class="desktop-nav-links">
+                <a href="index.html" class="desktop-nav-btn">/INÍCIO</a>
+                <a href="logs.html" class="desktop-nav-btn">/LOGS</a>
+                <a href="blog.html" class="desktop-nav-btn active">/BLOG</a>
+                <a href="me.html" class="desktop-nav-btn">/SOBRE</a>
             </nav>
         </div>
     </header>
@@ -68,14 +68,9 @@
     <main class="container">
         <section class="hero blog-hero-banner">
             <div class="blog-hero-content">
-                <h1 class="page-title">
-                    <span style="color: #0073a8;">HUMANOS&amp;</span><br>
-                    <span style="color: #7cd3ff;">MÁQUINAS.</span>
-                </h1>
-                <p class="subtitle">
-                    Este espaço funciona como uma espécie de diário de bordo, os textos são gerados com base em
-                    pesquisas
-                    manuais e escritos de maneira orgânica.
+                <h1 class="black-badge-title">BLOG</h1>
+                <p class="subtitle" style="color: var(--text-primary); font-weight: 500;">
+                    artigos e reviews aleatórias.
                 </p>
             </div>
         </section>
@@ -99,6 +94,7 @@
     </footer>
 
     <script src="js/blog.js"></script>
+    <script src="js/nav_widget.js"></script>
 </body>
 
 </html>

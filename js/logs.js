@@ -1,4 +1,4 @@
-const LOGS_JSON_URL = 'content/content/logs/logs.json';
+const LOGS_JSON_URL = 'content/logs/logs.json';
 
 async function renderLogsList() {
     const logFeedContainer = document.getElementById('log-feed');
@@ -49,10 +49,10 @@ async function renderLogsList() {
             entry.innerHTML = `
                 <div style="display: flex; gap: 16px;">
                     <div style="flex-shrink: 0;">
-                        <img src="content/content/media/img/avatar/avatar.jpg" alt="Avatar" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border-color);">
+                        <img src="assets/me2_min_grain.webp" alt="Avatar" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border-color);">
                     </div>
                     <div style="flex-grow: 1; min-width: 0;">
-                        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--info-blue); margin-bottom: 8px;">
+                        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-primary, #2c221e); margin-bottom: 8px;">
                             <strong>weslley343</strong>
                         </div>
                         <div class="log-content">

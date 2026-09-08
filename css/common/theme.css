@@ -1,11 +1,12 @@
-/* Gerado automaticamente por ThemeService a partir de content/config/theme.json */
+/* ThemeService - Papel Amarelado e Antigo (Vintage Parchment Paper) */
 :root {
-  --primary-color: #38bdf8;
-  --secondary-color: #10b981;
-  --bg-color: #0d0f12;
-  --surface-color: #15181c;
-  --text-primary: #e0e4eb;
-  --text-secondary: #9aa0a6;
+  --primary-color: #fff;
+  --secondary-color: #4a6b4e;
+  --bg-color: #f4ebd0;
+  --surface-color: #fdfbf5;
+  --text-primary: #2c221e;
+  --text-secondary: #786551;
+  --border-color: #d4c3a3;
   --info-blue: var(--primary-color);
   --growth-green: var(--secondary-color);
 }

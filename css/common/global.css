@@ -1,17 +1,17 @@
 :root {
-    --primary-color: #38bdf8;
-    --secondary-color: #10b981;
-    --bg-color: #0d0f12; /* Dark, neutral, research vibe */
-    --surface-color: #15181c;
-    --border-color: #2a2e35;
-    --text-primary: #e0e4eb;
-    --text-secondary: #9aa0a6;
+    --primary-color: #fff;
+    --secondary-color: #4a6b4e;
+    --bg-color: #f4ebd0;
+    --surface-color: #fdfbf5;
+    --border-color: #d4c3a3;
+    --text-primary: #2c221e;
+    --text-secondary: #786551;
     
     /* Semantic Colors */
     --info-blue: var(--primary-color);
     --growth-green: var(--secondary-color);
-    --warning-orange: #f59e0b;
-    --critical-red: #ef4444;
+    --warning-orange: #b85b14;
+    --critical-red: #991b1b;
 
     /* Typography */
     --font-heading: 'IBM Plex Sans Condensed', sans-serif;
@@ -42,6 +42,14 @@ body {
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
+    opacity: 1;
+    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.page-exit {
+    opacity: 0;
+    transform: scale(0.97);
+    pointer-events: none;
 }
 
 main {
@@ -54,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 a {
@@ -64,7 +72,7 @@ a {
 }
 
 a:hover {
-    color: #7dd3fc;
+    color: #6b261b;
 }
 
 /* Layout */
@@ -97,157 +105,69 @@ a:hover {
 }
 
 /* Components */
+.site-header {
+    width: 100%;
+    padding: var(--spacing-md) 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+.site-header .header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0;
+    width: 100%;
+    max-width: 960px;
+}
+
+@media (min-width: 992px) {
+    .site-header .header-container {
+        justify-content: space-between;
+        padding: 12px var(--spacing-lg);
+    }
+}
+
+.desktop-nav-links {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .desktop-nav-links {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .desktop-nav-btn {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        padding: 6px 14px;
+        background: transparent;
+        color: var(--text-primary);
+        border: 1px solid var(--text-primary);
+        border-radius: 2px;
+        transition: all 0.2s ease;
+        text-transform: uppercase;
+    }
+
+    .desktop-nav-btn:hover,
+    .desktop-nav-btn.active {
+        background: var(--text-primary, #000);
+        color: #fff !important;
+    }
+}
+
 .divider {
     border: 0;
     height: 1px;
     background-color: var(--border-color);
     margin: var(--spacing-xl) 0;
-}
-
-/* Navbar (Header / Navegação) */
-.navbar {
-    background-color: transparent;
-    border-bottom: none;
-    position: relative;
-    z-index: 100;
-}
-
-.navbar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-md) var(--spacing-lg);
-    max-width: 960px;
-    margin: 0 auto;
-}
-
-/* Logo no topo da página, centralizada */
-.navbar-brand {
-    font-family: var(--font-heading);
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    text-align: center;
-}
-
-.navbar-links a {
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    transition: color 0.2s ease, font-weight 0.2s ease;
-}
-
-.navbar-links a.active,
-.navbar-links a:hover {
-    color: var(--info-blue);
-    font-weight: 700;
-}
-
-/* Mobile / Tablet (< 992px): Brand no topo com fundo escuro & Botões fixos no rodapé */
-@media (max-width: 991px) {
-    .navbar {
-        background-color: transparent;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        border-bottom: none;
-        position: static;
-        transform: none !important;
-        filter: none !important;
-    }
-
-    .navbar-container {
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Logo fixa no topo com faixa escura para alto contraste */
-    .navbar-brand {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        height: 52px;
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        margin: 0;
-        background-color: rgba(13, 15, 18, 0.94) !important;
-        backdrop-filter: blur(12px) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
-        border-bottom: 1px solid var(--border-color);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        z-index: 9998 !important;
-    }
-
-    /* Botões fixos no rodapé da tela */
-    .navbar-links {
-        position: fixed !important;
-        bottom: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        top: auto !important;
-        min-height: 56px; /* Alterado de height fixo para min-height */
-        height: calc(56px + env(safe-area-inset-bottom, 0px));
-        display: flex !important;
-        align-items: center;
-        justify-content: space-around;
-        padding: 0 var(--spacing-xs); /* Reduzido o padding lateral do container */
-        padding-bottom: env(safe-area-inset-bottom, 0px);
-        background-color: rgba(13, 15, 18, 0.95) !important;
-        backdrop-filter: blur(12px) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
-        border-top: 1px solid var(--border-color);
-        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
-        z-index: 9999 !important;
-        font-family: var(--font-mono);
-        font-size: clamp(0.75rem, 3.5vw, 0.9rem); /* Fonte fluida para evitar overflow horizontal */
-        white-space: nowrap; /* Impede que o texto quebre de linha e salte a div */
-    }
-
-    .navbar-links a {
-        padding: var(--spacing-xs) 4px; /* Reduzindo um pouco o padding interno dos links no mobile */
-    }
-
-    body {
-        padding-top: 60px !important;   /* Espaço para a logo fixa no topo */
-        padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px)) !important; /* Espaço para o menu no rodapé do celular */
-    }
-}
-
-/* PC / Desktop (>= 992px): Logo no topo centro & Botões na parte de cima logo abaixo da logo */
-@media (min-width: 992px) {
-    .navbar {
-        border-bottom: 1px solid var(--border-color);
-        background-color: rgba(13, 15, 18, 0.92);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
-
-    .navbar-container {
-        padding: var(--spacing-md) var(--spacing-lg);
-    }
-
-    .navbar-links {
-        position: static;
-        display: flex;
-        justify-content: center;
-        gap: var(--spacing-lg);
-        font-family: var(--font-mono);
-        font-size: 1rem;
-    }
 }
 
 /* Footer */
@@ -268,4 +188,117 @@ a:hover {
         flex-direction: row;
         justify-content: space-between;
     }
+}
+
+/* -------------------------------------------------------------
+   Floating Bottom-Right Slide-to-Return Widget (voltar.png design)
+   ------------------------------------------------------------- */
+.corner-slider-widget {
+    position: fixed !important;
+    bottom: 32px !important;
+    right: 0 !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: 999999 !important;
+    width: 160px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+@media (min-width: 992px) {
+    .corner-slider-widget {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .corner-slider-widget {
+        bottom: calc(76px + env(safe-area-inset-bottom, 0px)) !important;
+        right: 0 !important;
+        width: 140px;
+    }
+}
+
+/* Horizontal Track Line extending all the way to the right screen edge */
+.corner-slider-widget .slider-track-line {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    right: 0; /* Extends straight to the edge of the screen */
+    height: 4px;
+    background-color: var(--text-primary, #2c221e);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/* Vertical Black Target Tick on Left */
+.corner-slider-widget .slider-target-tick {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    width: 4px;
+    height: 20px;
+    background-color: var(--text-primary, #2c221e);
+    transform: translateY(-50%);
+    z-index: 2;
+    border-radius: 1px;
+}
+
+/* Range Input overlaying the track with right margin so line extends past thumb */
+input[type="range"].corner-slide-input {
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    z-index: 3;
+    width: calc(100% - 20px);
+    margin-left: 20px;
+    margin-right: 24px;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    cursor: grab;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+input[type="range"].corner-slide-input:active {
+    cursor: grabbing;
+}
+
+/* White Vertical Thumb (identical to menu slider thumb) */
+input[type="range"].corner-slide-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 6px;
+    height: 28px;
+    border-radius: 1px;
+    background: #ffffff;
+    border: none;
+    box-shadow: 0 2px 8px rgba(60, 45, 30, 0.35);
+    cursor: grab;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+input[type="range"].corner-slide-input::-moz-range-thumb {
+    width: 6px;
+    height: 28px;
+    border-radius: 1px;
+    background: #ffffff;
+    border: none;
+    box-shadow: 0 2px 8px rgba(60, 45, 30, 0.35);
+    cursor: grab;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+input[type="range"].corner-slide-input::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+}
+
+input[type="range"].corner-slide-input::-moz-range-thumb:hover {
+    transform: scale(1.15);
 }
