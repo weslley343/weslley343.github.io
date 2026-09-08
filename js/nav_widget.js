@@ -33,22 +33,26 @@
             if (isTriggered || window.innerWidth >= 992) return;
             const val = parseInt(slider.value, 10);
 
-            // If dragged left towards black target tick (<= 25%), trigger return to Home!
+            // If dragged left towards black target tick (<= 25%), trigger return to Previous Page!
             if (val <= 25) {
-                triggerReturnHome();
+                triggerReturnBack();
             } else {
                 // Smoothly snap white handle back to right end (100%)
                 snapToRight();
             }
         }
 
-        function triggerReturnHome() {
+        function triggerReturnBack() {
             if (isTriggered) return;
             isTriggered = true;
             slider.value = 0;
             document.body.classList.add('page-exit');
             setTimeout(() => {
-                window.location.href = 'index.html';
+                if (window.history.length > 1 && document.referrer && document.referrer.indexOf(window.location.host) !== -1) {
+                    window.history.back();
+                } else {
+                    window.location.href = 'index.html';
+                }
             }, 350);
         }
 
@@ -72,7 +76,7 @@
         slider.addEventListener('input', (e) => {
             const val = parseInt(e.target.value, 10);
             if (val <= 10 && !isTriggered) {
-                triggerReturnHome();
+                triggerReturnBack();
             }
         });
 
